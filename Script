@@ -1,0 +1,8 @@
+//@version=4
+study("Tower Line")
+
+towerOpen = close[1] // this means the previous day
+towerHigh = close[1]>close?close[1]:close
+towerLow = close[1]<close?close[1]:close
+towerClose = close
+plotcandle(open=towerOpen, high=towerHigh, low=towerLow, close=towerClose, title='one day tower bar', color = open < close ? color.green : color.red)
